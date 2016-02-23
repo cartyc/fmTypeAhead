@@ -1,0 +1,15 @@
+//Break strings into type ahead search bits
+
+Let(
+
+
+[
+
+letters = Case (  Length ( text) > 1;    multikey ( Left ( text; Length ( text) - 1 ) ) & "¶" & text )
+
+];
+
+
+letters
+
+)
