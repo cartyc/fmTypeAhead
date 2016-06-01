@@ -1,0 +1,35 @@
+
+
+Let(
+
+[
+
+/*
+Set the required params
+*/
+loop = loop+ 1;
+fullWord = FieldBeginsWith ( string); // Get the full string
+wordList = Substitute(string ; " "; ¶); //Turn the string into a list
+listLength = ValueCount(wordList); // Get the list length
+currentWord = GetValue(wordList ; loop); // Get the current list value
+fieldSearch = FieldBeginsWith ( currentWord) // convert it into smaller parts
+]
+;
+
+	//Do the recursion dance
+	Case(
+
+		listLength   >   loop
+
+	;
+		fieldSearch & ¶ & 
+		searchKey(string; loop) & ¶
+	;
+
+  //Return the final results
+	fullWord  & ¶ & 
+	fieldSearch
+
+	)
+
+)
